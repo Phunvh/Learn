@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI English Learning - Login</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;400&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-main">
+  <div class="container-login">
+    <div class="login-card">
+      <div class="logo-section">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="logo" class="logo-img">
+        <h1 class="app-title">A.I. English</h1>
+      </div>
+      <div class="tab-switch">
+        <button class="tab active" id="login-tab" onclick="showTab('login')">Đăng nhập</button>
+        <button class="tab" id="signup-tab" onclick="showTab('signup')">Đăng ký</button>
+      </div>
+      <div class="tab-content">
+        <form class="form" id="login-form">
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Mật khẩu" required>
+          <button type="submit" class="main-btn">Đăng nhập</button>
+        </form>
+        <form class="form hide" id="signup-form">
+          <input type="text" placeholder="Tên của bạn" required>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Mật khẩu" required>
+          <button type="submit" class="main-btn">Đăng ký</button>
+        </form>
+      </div>
+      <p class="switch-hint">Chưa có tài khoản? <a href="#" onclick="showTab('signup')">Đăng ký ngay</a></p>
+    </div>
+  </div>
+  <script>
+    function showTab(tab) {
+      document.getElementById('login-form').classList.toggle('hide', tab !== 'login');
+      document.getElementById('signup-form').classList.toggle('hide', tab !== 'signup');
+      document.getElementById('login-tab').classList.toggle('active', tab === 'login');
+      document.getElementById('signup-tab').classList.toggle('active', tab === 'signup');
+    }
+  </script>
+</body>
+</html>
