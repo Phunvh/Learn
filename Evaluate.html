@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Assessment</title>
+  <style>
+    body {
+      margin: 0; padding: 0;
+      background: #ececec;
+      display: flex; align-items: center; justify-content: center;
+      height: 100vh;
+      font-family: "Segoe UI", sans-serif;
+    }
+    /* Giả lập khung điện thoại */
+    .phone-frame {
+      width: 360px; height: 640px;
+      background: #fff;
+      border-radius: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden; position: relative;
+    }
+    .phone-frame::before {
+      content: "";
+      position: absolute;
+      top: 10px; left: 50%;
+      transform: translateX(-50%);
+      width: 140px; height: 30px;
+      background: #ececec; border-radius: 20px;
+    }
+    .screen {
+      padding: 25px 20px;
+      height: 100%;
+      overflow-y: auto;
+    }
+    .screen h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: #333;
+    }
+    .card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 15px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .card h2 {
+      font-size: 17px;
+      margin: 0 0 10px;
+      color: #1a237e;
+    }
+    /* Score circle */
+    .score {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,#42a5f5,#478ed1);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; font-weight: bold;
+      margin: 0 auto 12px;
+    }
+    .feedback-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .feedback-list li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #444;
+      position: relative;
+      padding-left: 20px;
+    }
+    .feedback-list li:before {
+      content: "•";
+      position: absolute;
+      left: 0; top: 2px;
+      color: #f44336;
+    }
+    /* Dashboard progress */
+    .dash-item {
+      margin-bottom: 14px;
+    }
+    .dash-item span {
+      font-size: 14px;
+      color: #555;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .progress-bg {
+      width: 100%; height: 8px;
+      background: #ddd; border-radius: 6px;
+      overflow: hidden;
+    }
+    .progress-fg {
+      height: 100%;
+      background: #66bb6a;
+      width: 0%;
+      transition: width .4s;
+    }
+    .btn-detail {
+      display: block;
+      text-align: center;
+      margin: 12px auto 0;
+      padding: 10px 0;
+      width: 60%;
+      background: #1e88e5;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .btn-detail:hover {
+      background: #1565c0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="phone-frame">
+    <div class="screen">
+      <h1>Essay Assessment</h1>
+
+      <!-- 1. Your Score -->
+      <div class="card">
+        <h2>Your Score</h2>
+        <div class="score">7.5</div>
+        <p style="text-align:center; font-size:14px; color:#666; margin-top:-8px;">
+          Scored by AI
+        </p>
+      </div>
+
+      <!-- 2. Error Analysis & Feedback -->
+      <div class="card">
+        <h2>Error Analysis & Feedback</h2>
+        <ul class="feedback-list">
+          <li>Grammar: “He go to school” → “He goes to school”.</li>
+          <li>Spelling: “adress” → “address”.</li>
+          <li>Vocabulary: you used “big” too often; try “huge”, “vast”.</li>
+        </ul>
+        <a href="#" class="btn-detail">View Details</a>
+      </div>
+
+      <!-- 3. Learning Progress -->
+      <div class="card">
+        <h2>Learning Progress</h2>
+        <div class="dash-item">
+          <span>Reading: 80%</span>
+          <div class="progress-bg"><div class="progress-fg" style="width:80%;"></div></div>
+        </div>
+        <div class="dash-item">
+          <span>Writing: 65%</span>
+          <div class="progress-bg"><div class="progress-fg" style="width:65%;"></div></div>
+        </div>
+        <div class="dash-item">
+          <span>Listening: 50%</span>
+          <div class="progress-bg"><div class="progress-fg" style="width:50%;"></div></div>
+        </div>
+        <div class="dash-item">
+          <span>Speaking: 30%</span>
+          <div class="progress-bg"><div class="progress-fg" style="width:30%;"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
